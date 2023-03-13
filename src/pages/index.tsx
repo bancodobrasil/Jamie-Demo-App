@@ -1,11 +1,10 @@
 import Head from "next/head";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const ibm = IBM_Plex_Sans({ weight: "500", subsets: ["latin"] });
 
 export default function Home() {
   const [menus, setMenus] = useState([]);
@@ -37,8 +36,8 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h2 className={inter.className}>{menu.name}</h2>
-              <p className={inter.className}>Lorem ipsum dolor.</p>
+              <h2 className={ibm.className}>{menu.name}</h2>
+              <p className={ibm.className}>Lorem ipsum dolor.</p>
             </a>
           ))}
         </div>
