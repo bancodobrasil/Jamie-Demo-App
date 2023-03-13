@@ -6,13 +6,15 @@ type Data = {
   name: string;
 };
 
+const { JAMIE_SERVICE_API } = process.env;
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
   try {
     const response = await axios.post(
-      `https://service.jamie.g6tech.com.br/api/v1/menus/jamie-demo/eval`,
+      `${JAMIE_SERVICE_API}/api/v1/menus/jamie-demo/eval`,
       {}
     );
     // console.log("DATA: ", response.data);
