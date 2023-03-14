@@ -6,13 +6,13 @@ import styles from "@/styles/Home.module.css";
 
 const ibm = IBM_Plex_Sans({ weight: "500", subsets: ["latin"] });
 
-function renderItens(items: any[]) {
+function renderItems(items: any[]) {
   return (
     <ul>
       {items.map((item) => (
         <li key={item.id} className={ibm.className}>
           {item.name}
-          {item.items && renderItens(item.items)}
+          {item.items && renderItems(item.items)}
         </li>
       ))}
     </ul>
@@ -51,7 +51,7 @@ export default function Home() {
             >
               <h2 className={ibm.className}>{menu.name}</h2>
               <p className={ibm.className}>Lorem ipsum dolor.</p>
-              {menu.items && renderItens(menu.items)}
+              {menu.items && renderItems(menu.items)}
             </a>
           ))}
         </div>
